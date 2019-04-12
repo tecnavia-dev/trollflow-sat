@@ -1,8 +1,8 @@
 config:
   product_list: &product_list
-    ../config_files/flow_processor_satpy_products.yaml
+    ../config_files/met11/flow_processor_satpy_products-met11.yaml
   log_config:
-    ../config_files/flow_processor_log_config.ini
+    ../config_files/met11/flow_processor_log_config-met11.ini
 
   # It is possible to lock each worker to reduce simultaneous CPU load and
   # memory usage.  Each step that has *use_lock* set as true will wait until
