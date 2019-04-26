@@ -42,9 +42,9 @@ setup(name="trollflow_sat",
       url="https://github.com/pytroll/trollflow-sat",
       packages=['trollflow_sat', ],
       scripts=[],
-      data_files=[('config_files/met11', ['examples/flow_processor_satpy-met11.yaml','examples/flow_processor_log_config-met11.ini','examples/flow_processor_satpy_products-met11.yaml'])],
+      data_files=[],
       zip_safe=False,
       install_requires=['trollflow', 'posttroll', 'trollsift', 'dpath', 'six'],
       tests_require=['trollflow', 'mock', 'pyyaml', 'trollsift', 'six'],
       test_suite='trollflow_sat.tests.suite',
-      )
+)
