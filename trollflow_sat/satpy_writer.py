@@ -11,6 +11,8 @@ from posttroll.publisher import Publish
 from trollflow_sat import utils
 from trollsift import compose
 
+import copy
+
 
 class DataWriterContainer(object):
 
@@ -203,8 +205,14 @@ class DataWriter(Thread):
         # Available composite names
         composite_names = [dset.name for dset in lcl.keys()]
 
+        original_kwargs = copy.deepcopy(kwargs)
+
         # Save all products in a delayed way
         for prod in products:
+            # restore kwargs for each single product since some params can be configured in ninjotiff.cfg
+            # only for some products and not for all
+            kwargs = copy.deepcopy(original_kwargs)
+
             # Skip the removed composites
             if prod not in composite_names:
                 continue
