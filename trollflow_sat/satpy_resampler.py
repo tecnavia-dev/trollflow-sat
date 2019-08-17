@@ -81,6 +81,13 @@ class Resampler(AbstractWorkflowComponent):
         except (AttributeError, KeyError):
             pass
 
+        try:
+            kwargs['no_cache_for'] = context['no_cache_for']
+            self.logger.debug("Cache removed for %s",
+                              kwargs['no_cache_for'])
+        except (AttributeError, KeyError):
+            pass
+
         prod_list = product_config["product_list"]
 
         # Overpass for coverage calculations
